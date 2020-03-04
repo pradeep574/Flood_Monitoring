@@ -77,7 +77,7 @@ public class HomePage extends AppCompatActivity {
         noti = findViewById(R.id.noti);
         toolbar = findViewById(R.id.toolBar);
 
-
+    /* ---------------Click on the NOtification to go to Maps Activity from HomePage------------------*/
         noti.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,6 +87,9 @@ public class HomePage extends AppCompatActivity {
                 }
             }
         });
+
+
+        /* ----------This is to get the value of Flood Level from the firebase---------- */
 
         df.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -98,7 +101,7 @@ public class HomePage extends AppCompatActivity {
                 System.out.println("VAlue is" + n);
                 Intent mapInt = new Intent(HomePage.this,HeatmapsDemoActivity2.class);
 
-                flood.setText("FLood Stauts" + n);
+                flood.setText(n);
 
                 if(num > 4.0) {
                     NotificationCompat.Builder builder = new NotificationCompat.Builder(HomePage.this, CHANNEL_ID);
@@ -125,9 +128,10 @@ public class HomePage extends AppCompatActivity {
 
             }
         });
-        get.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+
+
+        /* ----------This is to get the value of Water Level from the firebase---------- */
+
                 // df = FirebaseDatabase.getInstance().getReference().child("Current").child("-M1--oWe6MiDwIY_AFOc");
                 df.addValueEventListener(new ValueEventListener() {
                     @SuppressLint("SetTextI18n")
@@ -135,7 +139,7 @@ public class HomePage extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         String n = dataSnapshot.child("Level").getValue().toString();
                         System.out.println("Value is" + n);
-                        serreply.setText("Water Level " + n);
+                        serreply.setText(n);
                     }
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -143,8 +147,6 @@ public class HomePage extends AppCompatActivity {
                     }
                 });
 
-            }
-        });
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationManager mNotificationManager =
                     (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
