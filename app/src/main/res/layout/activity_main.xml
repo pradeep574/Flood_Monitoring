@@ -53,6 +53,7 @@
            android:layout_height="wrap_content"
            android:id="@+id/name"
            android:hint="Enter your Name"/>
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -88,4 +89,5 @@
            android:textAllCaps="false"
            android:textColor="#ffffff" />
    </LinearLayout>
+
 </RelativeLayout>

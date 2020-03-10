@@ -63,7 +63,6 @@ public class HomePage extends AppCompatActivity {
         df = FirebaseDatabase.getInstance().getReference().child("Current").child("-M1-7CyPXRW1xxLClSC6");
         serreply = findViewById(R.id.serreply);
         flood = findViewById(R.id.flood);
-        get = findViewById(R.id.get);
 
         spinner = findViewById(R.id.spinner);
 
@@ -72,7 +71,6 @@ public class HomePage extends AppCompatActivity {
         temp = findViewById(R.id.temp);
         hum= findViewById(R.id.hum);
         pres = findViewById(R.id.pres);
-        getdata = findViewById(R.id.getdata);
         maps = findViewById(R.id.buttonMaps);
         noti = findViewById(R.id.noti);
         toolbar = findViewById(R.id.toolBar);

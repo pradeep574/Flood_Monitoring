@@ -43,5 +43,6 @@
     <string name="get">GET</string>
     <string name="notification">NOTIFICATION</string>
     <string name="subscribe">Subscribe</string>
+    <string name="flood_monitoring_and_alerting_system">Flood Monitoring and Alerting System</string>
 
 </resources>
